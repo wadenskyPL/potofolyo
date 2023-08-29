@@ -1,0 +1,29 @@
+
+--pou afiche tout itilizatè ki sou sit la deja nan lòd kwonoloji pi resan
+
+select non, siyati,imel,foto,telefòn 
+from itilizatè
+order by id_itilizatè Desc
+;
+
+---pou afiche pwofil yon itilizatè byen spesifik
+select non, siyati,imel,foto,telefòn
+from itilizatè
+where id_itilizatè=--kle prime itilizatè ou vle afiche a
+
+--liste  pwojè  yon  itilizatè
+select non, siyati,imel,itilizatè.foto,telefòn ,tit
+from  pwojè 
+inner join itilizatè on pwojè.id_pwojè = itilizatè.id_itilizatè
+where id_pwojè = .....
+
+--we yon pwojè an detay
+select  itilizatè.non, siyati tit, slug, dat_kreye, deskripsyon ,pwojè.foto, kategori.non
+from 
+pwojè
+inner join kategori on pwojè.id_pwojè=kategori.id_kategori
+inner join itilizatè on pwojè.id_pwojè=itilizatè.id_itilizatè
+WHERE id_kategori=.....
+
+--pou enserere  yon nouvo pwojè , si itilizate a konekte
+insert into pwojè  (tit ,slug, dat_kreye, deskripsyon,foto,id_itilizatè) values () ;
